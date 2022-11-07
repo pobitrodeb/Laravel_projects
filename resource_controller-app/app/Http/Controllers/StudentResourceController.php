@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Student;
 class StudentResourceController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class StudentResourceController extends Controller
      */
     public function index()
     {
-        //
+        return  view('student.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class StudentResourceController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -34,7 +34,8 @@ class StudentResourceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Student::newStudent($request);
+        return redirect('/student')->with('message', 'New Student Create Successfully');
     }
 
     /**
@@ -45,7 +46,7 @@ class StudentResourceController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
