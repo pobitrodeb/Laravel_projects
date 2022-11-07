@@ -13,10 +13,10 @@ class Student extends Model
 
     public static function newStudent($request)
     {
-        self::$student              = new Student();
-        self::$student->studentName = $request->studentName;
-        self::$student->email = $request->email;
-        self::$student->mobile = $request->mobile;
+        self::$student                          = new Student();
+        self::$student->studentName             = $request->studentName;
+        self::$student->email                   = $request->email;
+        self::$student->mobile                  = $request->mobile;
         self::$student->save();
     }
 }

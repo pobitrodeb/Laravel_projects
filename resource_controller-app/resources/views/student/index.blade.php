@@ -32,20 +32,35 @@
                             <div class="form-group row mb-4">
                                 <label for="" class="col-sm-3 col-form-label">Name</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="studentName" class="form-control" id="">
+                                    <input type="text" name="studentName" class="form-control" @error('studentName') is-invalid @enderror value="{{old('studentName')}}">
+                                    <span>
+                                        @error('studentName')
+                                        <strong class="text-danger">{{$message}}</strong>
+                                        @enderror
+                                    </span>
                                 </div>
                             </div>
                             <div class="form-group row mb-4">
-                                <label for="horizontal-email-input" class="col-sm-3 col-form-label">Email</label>
+                                <label for="" class="col-sm-3 col-form-label">Email</label>
                                 <div class="col-sm-9">
-                                    <input type="email" name="email" class="form-control" id="horizontal-email-input">
+                                    <input type="email" name="email" class="form-control" @error('email') is-invalid @enderror value="{{old('email')}}">
+                                    <span>
+                                        @error('email')
+                                        <strong class="text-danger">{{$message}}</strong>
+                                        @enderror
+                                    </span>
                                 </div>
                             </div>
 
                             <div class="form-group row mb-4">
                                 <label for="horizontal-password-input" class="col-sm-3 col-form-label">Mobile Number</label>
                                 <div class="col-sm-9">
-                                    <input type="number" name="mobile" class="form-control" id="horizontal-password-input">
+                                    <input type="number" name="mobile" class="form-control" @error('mobile' ) is-invvalid @enderror value="{{old('mobile')}}">
+                                    <span>
+                                        @error('mobile')
+                                        <strong class="text-danger">{{$message}}</strong>
+                                        @enderror
+                                    </span>
                                 </div>
                             </div>
 

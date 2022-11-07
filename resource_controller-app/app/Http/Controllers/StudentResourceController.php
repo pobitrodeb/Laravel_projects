@@ -34,6 +34,13 @@ class StudentResourceController extends Controller
      */
     public function store(Request $request)
     {
+
+        $validated = $request->validate([
+            'studentName'           => 'required',
+            'email'                 => 'required',
+            'mobile'               => 'required',
+        ]);
+
         Student::newStudent($request);
         return redirect('/student')->with('message', 'New Student Create Successfully');
     }
