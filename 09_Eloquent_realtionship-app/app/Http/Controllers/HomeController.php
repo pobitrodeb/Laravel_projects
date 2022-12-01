@@ -7,6 +7,7 @@ use App\Models\Phone;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Comment;
+use App\MOdels\Category;
 
 class HomeController extends Controller
 {
@@ -40,5 +41,16 @@ class HomeController extends Controller
         $posts = Post::with('comments')->get();
         // $comments = Comment::with('p')->get();
         return view('website.home.oneTomany', compact('posts'));
+    }
+
+    public function manyTOMany()
+    {
+        $posts = Post::with('categories')->get(); 
+        return $posts; 
+
+        // $categories = Category::with('posts')->get(); 
+        // return $categories;
+
+        return view('website.home.manyTOMany');
     }
 }
